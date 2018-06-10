@@ -671,8 +671,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97be460b2d8df44a9a2392e3469d2e1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ForceScale: 100
-  PointScale: 0
+  ForceScale: 10000
+  PointScale: 1
 --- !u!1001 &1371042232
 Prefab:
   m_ObjectHideFlags: 0

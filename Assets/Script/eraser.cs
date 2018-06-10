@@ -15,13 +15,14 @@ public class eraser : MonoBehaviour {
 	void Update () {
         if (Input.anyKeyDown)
         {
-            RandomForce();
+            Vector2 direction = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+            RandomForce(direction);
         }		
 	}
 
-    void RandomForce()
+    void RandomForce(Vector2 direction)
     {
-        Vector2 Force = new Vector2(Random.Range(-1 * ForceScale, ForceScale), Random.Range(-1 * ForceScale, ForceScale));
+        Vector2 Force = Random.Range(0f, ForceScale) * direction;
         Vector2 Point = gameObject.GetComponent<Rigidbody2D>().position + new Vector2(Random.Range(-1 * PointScale, PointScale), Random.Range(-1 * PointScale, PointScale));
 
         gameObject.GetComponent<Rigidbody2D>().AddForceAtPosition(Force, Point);
